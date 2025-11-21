@@ -1,0 +1,10 @@
+/* pages/register.css - register page (uses same layout as login) */
+
+.auth-card {
+  padding: 28px;
+}
+.input-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}

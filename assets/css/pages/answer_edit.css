@@ -1,0 +1,19 @@
+/* pages/answer_edit.css */
+
+.answer-edit-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 18px;
+}
+.question-preview {
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.03);
+  margin-bottom: 12px;
+}
+.edit-card {
+  padding: 14px;
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+}

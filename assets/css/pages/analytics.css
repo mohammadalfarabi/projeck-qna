@@ -1,0 +1,54 @@
+/* pages/analytics.css - page specific adjustments for analytics view */
+
+.analytics-container {
+  max-width: var(--container);
+  margin: 24px auto;
+  padding: 0 18px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.stat-card {
+  padding: 18px;
+  text-align: center;
+}
+.stat-title {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.analytics-graph {
+  padding: 12px;
+}
+
+.modern-table th,
+.modern-table td {
+  color: var(--text);
+}
+
+/* canvas responsive */
+.analytics-graph canvas {
+  width: 100%;
+  display: block;
+  height: 320px;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+/* small screens */
+@media (max-width: 900px) {
+  .analytics-container {
+    padding: 12px;
+  }
+}

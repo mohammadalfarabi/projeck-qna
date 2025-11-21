@@ -1,0 +1,90 @@
+/* layout.css
+   Site layout: topbar, sidebars, main content, grid
+*/
+
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr 300px;
+  gap: var(--gap);
+  max-width: var(--container);
+  margin: 28px auto;
+  padding: 0 18px;
+  align-items: start;
+}
+
+/* Topbar (if used) */
+.topbar {
+  grid-column: 1 / -1;
+  padding: 16px 24px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Sidebars */
+.sidebar-left,
+.sidebar-right {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Left sidebar specifics */
+.sidebar-left .profile-card {
+  text-align: center;
+}
+.sidebar-left .profile-img {
+  width: 88px;
+  height: 88px;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px;
+}
+.menu {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.menu-item {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: var(--text);
+  font-weight: 500;
+}
+.menu-item:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+.menu-item.active {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: #fff;
+}
+
+/* Main column */
+.main-content {
+  min-height: 320px;
+}
+
+/* Right sidebar specifics */
+.sidebar-right h3 {
+  margin-top: 0;
+}
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Responsive: collapse to single column */
+@media (max-width: 1000px) {
+  .layout {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+}

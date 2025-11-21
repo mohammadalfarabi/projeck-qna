@@ -1,0 +1,165 @@
+/* components.css
+   Reusable components: card, button, inputs, table, tags, badges
+*/
+
+/* Card */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 8px 24px rgba(75, 107, 255, 0.18);
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+}
+
+/* Secondary button (outline) */
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+/* Inputs */
+.input-group {
+  margin-bottom: 12px;
+}
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(16, 24, 40, 0.06);
+  background: transparent;
+  transition: box-shadow var(--transition), border-color var(--transition);
+  font-size: 0.95rem;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 8px 20px rgba(75, 107, 255, 0.08);
+}
+
+/* Tables */
+.modern-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.modern-table th,
+.modern-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.modern-table thead th {
+  background: rgba(0, 0, 0, 0.02);
+  font-weight: 600;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(75, 107, 255, 0.08);
+  color: var(--primary);
+  text-decoration: none;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.tag.active {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: #fff;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.06);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* Question / Answer Cards */
+.question-card,
+.answer-card {
+  background: linear-gradient(
+    180deg,
+    var(--surface),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+/* small components */
+.empty {
+  text-align: center;
+  padding: 28px;
+  color: var(--muted);
+}
+.link-title {
+  color: var(--text);
+  font-weight: 600;
+}
+.q-user-img,
+.a-user-img,
+.comment-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+/* form helpers */
+.w-100 {
+  width: 100%;
+}
+
+/* minor responsive */
+@media (max-width: 600px) {
+  .q-user-img,
+  .a-user-img {
+    width: 34px;
+    height: 34px;
+  }
+}

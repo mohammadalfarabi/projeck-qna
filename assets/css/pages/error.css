@@ -1,0 +1,16 @@
+/* pages/error.css */
+
+.error-container {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.error-card {
+  text-align: center;
+  background: var(--surface);
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}

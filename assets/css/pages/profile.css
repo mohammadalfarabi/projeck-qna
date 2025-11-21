@@ -1,0 +1,41 @@
+/* pages/profile.css */
+
+.profile-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.profile-card {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 18px;
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.profile-right {
+  flex: 1;
+}
+.input-file {
+  border: 1px dashed rgba(0, 0, 0, 0.06);
+  padding: 10px;
+  border-radius: 10px;
+  display: block;
+  margin-top: 10px;
+}
+.password-card {
+  padding: 18px;
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
