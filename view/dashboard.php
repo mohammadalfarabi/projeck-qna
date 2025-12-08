@@ -1,190 +1,205 @@
-
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
     body {
-        background-color: #F2D1D1 !important;
-        font-family: 'Segoe UI', sans-serif;
+        background-color: #F2D1D1 !important;  /* warna background baru */
     }
+         /* --- AREA DASHBOARD UTAMA --- */
+.dashboard {
+    background: #FFE6E6;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
 
-    /* --- AREA DASHBOARD UTAMA --- */
-    .dashboard {
-        background: #FFE6E6;
-        padding: 28px;
-        border-radius: 12px;
-        box-shadow: 0 0 6px rgba(214, 169, 157, 0.4);
-        margin-top: 20px;
-    }
 
-    /* --- JUDUL UTAMA --- */
-    .dashboard h2 {
-        font-size: 28px;
-        margin-bottom: 20px;
-        color: #000000ff;
-        font-weight: 600;
-    }
+/* --- JUDUL UTAMA --- */
+.dashboard h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #000000ff;
+    font-weight: 600;
+}
 
-    /* --- FILTER SELECT --- */
-    .dashboard select {
-        padding: 10px;
-        border-radius: 6px;
-        border: 1px solid #9CAFAA;
-        background: #C6DCE4;
-        outline: none;
-        transition: all .2s ease;
-        color: #333;
-    }
+/* --- FORM FILTER TAG --- */
+.dashboard select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #9CAFAA;
+    background: #C6DCE4;
+    outline: none;
+    transition: all .2s ease;
+    color: #333;
+}
 
-    .dashboard select:focus {
-        border-color: #D6A99D;
-        box-shadow: 0 0 6px rgba(214, 169, 157, 0.4);
-    }
+.dashboard select:focus {
+    border-color: #D6A99D;
+    box-shadow: 0 0 5px rgba(214,169,157,0.4);
+}
 
-    /* --- FORM AJUKAN PERTANYAAN --- */
-    .ask-question {
-        background: #C6DCE4;
-        padding: 20px;
-        margin-bottom: 25px;
-        border-radius: 10px;
-        border-left: 5px solid #D6A99D;
-    }
+/* --- FORM AJUKAN PERTANYAAN --- */
+.ask-question {
+    background: #C6DCE4;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border-left: 5px solid #D6A99D; /* accent utama */
+}
 
-    .ask-question h3 {
-        margin-bottom: 15px;
-        color: #D6A99D;
-    }
+.ask-question h3 {
+    margin-bottom: 15px;
+    color: #D6A99D;
+}
 
-    .ask-question-form input[type="text"],
-    .ask-question-form textarea,
-    .ask-question-form select {
-        width: 100%;
-        padding: 10px 12px;
-        border-radius: 8px;
-        border: 1px solid #9CAFAA;
-        margin-bottom: 15px;
-        font-size: 15px;
-        background: #FBF3D5;
-        transition: 0.2s;
-    }
+.ask-question-form input[type="text"],
+.ask-question-form textarea,
+.ask-question-form select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #9CAFAA;
+    margin-bottom: 15px;
+    font-size: 15px;
+    transition: 0.2s;
+    background: #FBF3D5;
+}
 
-    .ask-question-form input:focus,
-    .ask-question-form textarea:focus,
-    .ask-question-form select:focus {
-        border-color: #D6A99D;
-        box-shadow: 0 0 6px rgba(214, 169, 157, 0.4);
-    }
+.ask-question-form input:focus,
+.ask-question-form textarea:focus,
+.ask-question-form select:focus {
+    border-color: #D6A99D;
+    box-shadow: 0 0 6px rgba(214,169,157,0.4);
+}
 
-    /* BUTTON */
-    .ask-question-form button {
-        background: #D6A99D;
-        color: white;
-        padding: 10px 18px;
-        font-size: 15px;
-        border: none;
-        border-radius: 7px;
-        cursor: pointer;
-        transition: 0.2s;
-    }
+/* BUTTON */
+.ask-question-form button {
+    background: #D6A99D;
+    color: white;
+    padding: 10px 18px;
+    font-size: 15px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.2s;
+}
 
-    .ask-question-form button:hover {
-        background: #c0897f;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(214, 169, 157, 0.4);
-    }
+.ask-question-form button:hover {
+    background: #c0897f;
+}
 
-    /* --- LIST PERTANYAAN --- */
-    .questions-list h3 {
-        margin-bottom: 15px;
-        border-bottom: 2px solid #D6A99D;
-        padding-bottom: 5px;
-        color: #000000ff;
-    }
+/* --- LIST PERTANYAAN --- */
+.questions-list h3 {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #D6A99D;
+    padding-bottom: 5px;
+    color: #000000ff;
+}
 
-    .question-item {
-        padding: 15px 18px;
-        background: #DAEAF1;
-        border-radius: 8px;
-        border: 1px solid #c9e7f4ff;
-        margin-bottom: 15px;
-        transition: 0.2s;
-    }
+.question-item {
+    padding: 15px 18px;
+    background: #DAEAF1;
+    border-radius: 8px;
+    border: 1px solid #c9e7f4ff;
+    margin-bottom: 15px;
+    transition: 0.2s;
+}
 
-    .question-item:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 2px 10px rgba(214, 169, 157, 0.4);
-    }
+.question-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
 
-    .question-item h4 a {
-        text-decoration: none;
-        font-size: 20px;
-        color: #D6A99D;
-        font-weight: 600;
-        transition: 0.2s;
-        background-color: #FBF3D5;
-        border-radius: 5px;
-        padding: 5px;
-    }
+.question-item h4 a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #D6A99D;
+    font-weight: 600;
+    transition: 0.2s;
+}
 
-    .question-item h4 a:hover {
-        color: #b77f74;
-    }
+.question-item h4 a:hover {
+    color: #b77f74;
+}
 
-    .question-item p {
-        margin: 10px 0;
-        color: #000000ff;
-    }
+.question-item p {
+    margin: 10px 0;
+    color: #000000ff;
+}
 
-    .question-item small b {
-        color: #050404ff;
-    }
+/* --- TANGGAL & USER --- */
+.question-item small b {
+    color: #050404ff;
+}
 
-    /* --- PAGINATION --- */
-    .pagination a {
-        padding: 7px 12px;
-        border-radius: 6px;
-        border: 1px solid #cbe8f5ff;
-        margin: 0 3px;
-        text-decoration: none;
-        color: #333;
-        background: #FBF3D5;
-        font-size: 14px;
-        transition: 0.2s;
-    }
+/* --- PAGINATION --- */
+.pagination a {
+    padding: 7px 12px;
+    border-radius: 6px;
+    border: 1px solid #cbe8f5ff;
+    margin: 0 3px;
+    text-decoration: none;
+    color: #333;
+    background: #FBF3D5;
+    font-size: 14px;
+    transition: 0.2s;
+}
 
-    .pagination a:hover {
-        background: #D6A99D;
-        color: white;
-        border-color: #D6A99D;
-    }
+.pagination a:hover {
+    background: #D6A99D;
+    color: white;
+    border-color: #D6A99D;
+}
 
-    .pagination a[style*="font-weight: bold"] {
-        background: #D6A99D !important;
-        color: white !important;
-        border-color: #D6A99D !important;
-    }
-</style>
+/* Halaman aktif */
+.pagination a[style*="font-weight: bold"] {
+    background: #D6A99D !important;
+    color: white !important;
+    border-color: #D6A99D !important;
+}
+.question-item {
+    background-color: #DAEAF1 !important;  /* ganti warna biru */
+    border-radius: 10px;
+    padding: 15px;
+}
 
-<?php include 'header.php'; ?>
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<?php
+include 'header.php';
+?>
 
 <div class="container dashboard">
 
     <h2>Forum Q&A</h2>
 
-
+    
     <div class="ask-question">
         <h3>Submit a Question</h3>
-
-        <form action="index.php?controller=forum&action=create_question" method="POST" class="form-group ask-question-form">
+        <form action="../controller/forum_controller.php" method="POST" class="form-group ask-question-form">
             <input type="hidden" name="action" value="create_question">
-
+            
             <div class="form-group">
                 <label>Question Title</label>
                 <input type="text" name="title" required>
             </div>
-
+            
             <div class="form-group">
                 <label>Select a Tag:</label>
                 <select name="tag_id" required>
                     <option value="">-- Select a Tag --</option>
-
+                    
                     <?php
                     mysqli_data_seek($tags, 0); // reset pointer result
                     while ($tag = mysqli_fetch_assoc($tags)) {
@@ -193,19 +208,18 @@
                     ?>
                 </select>
             </div>
-
+            
             <div class="form-group">
                 <label>Question Content:</label>
                 <textarea name="body" rows="5" required></textarea>
             </div>
-
+            
             <button type="submit">Send a Question</button>
         </form>
     </div>
 
-
     <form method="GET" style="margin-bottom: 20px;" class="form-group">
-        <label>Search from Tag:</label>
+        <label>Filter Tag:</label>
         <select name="tag_id" onchange="this.form.page.value=1; this.form.submit()">
             <option value="">-- Select a Tag --</option>
             <?php mysqli_data_seek($tags, 0);
@@ -217,51 +231,33 @@
             <?php } ?>
         </select>
         <input type="hidden" name="page" value="1">
-        <input type="hidden" name="controller" value="dashboard">
-        <input type="hidden" name="action" value="index">
     </form>
-
-
-    <form method="GET" class="form-group search-form" style="margin-bottom: 20px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
-        <label style="flex-basis: 100%;">Search Question by Title:</label>
-        <input type="text" name="search_title" value="<?= htmlspecialchars($search_title ?? ''); ?>" placeholder="Enter Question Title"
-            style="padding: 10px; border-radius: 6px; border: 1px solid #9CAFAA; flex: 1; background: #FBF3D5; transition: 0.2s;">
-        <input type="hidden" name="page" value="1">
-        <input type="hidden" name="controller" value="dashboard">
-        <input type="hidden" name="action" value="index">
-        <button type="submit" style="background: #D6A99D; color: white; padding: 10px 16px; border: none; border-radius: 6px; cursor: pointer; transition: 0.2s;">
-            Search
-        </button>
-    </form>
-
+    
     <div class="questions-list">
-        <h3>All Question <?= $tag_filter ? "(Filtering With Tag)" : ($search_title ? "(Searching by Title)" : "") ?></h3>
+        <h3>New Question <?= $tag_filter ? "(Disaring berdasarkan tag)" : "" ?></h3>
 
-        <?php if ($search_title && mysqli_num_rows($questions) == 0): ?>
-            <p>No question found with title containing: <?= htmlspecialchars($search_title); ?>.</p>
-        <?php elseif (!$search_title && mysqli_num_rows($questions) == 0): ?>
+        <?php if (mysqli_num_rows($questions) == 0): ?>
             <p>There are No Question With This Tag.</p>
-        <?php else: ?>
-            <?php while ($question = mysqli_fetch_assoc($questions)): ?>
-                <div class="question-item question">
-                    <h4>
-
-                        <a href="index.php?controller=forum&action=question_detail&id=<?= $question['question_id']; ?>">
-                            <?= htmlspecialchars($question['title']); ?>
-                        </a>
-                    </h4>
-
-                    <p><?= nl2br(htmlspecialchars(substr($question['body'], 0, 200))); ?>...</p>
-
-                    <small>
-                        Asked By: <b><?= htmlspecialchars($question['user_name']); ?></b>
-                        On <?= date("d M Y H:i", strtotime($question['created_at'])); ?>
-                    </small>
-                    <br>
-                    <small>Tag: <b><?= htmlspecialchars($question['tags']); ?></b></small>
-                </div>
-            <?php endwhile; ?>
         <?php endif; ?>
+
+        <?php while ($question = mysqli_fetch_assoc($questions)): ?>
+            <div class="question-item question">
+                <h4>
+                    <a href="../controller/forum_controller.php?action=question_detail&id=<?= $question['question_id']; ?>">
+                        <?= htmlspecialchars($question['title']); ?>
+                    </a>
+                </h4>
+
+                <p><?= nl2br(htmlspecialchars(substr($question['body'], 0, 200))); ?>...</p>
+
+                <small>
+                    Asked By: <b><?= htmlspecialchars($question['user_name']); ?></b>
+                    On <?= date("d M Y H:i", strtotime($question['created_at'])); ?>
+                </small>
+                <br>
+                <small>Tag: <b><?= htmlspecialchars($question['tags']); ?></b></small>
+            </div>
+        <?php endwhile; ?>
     </div>
 
 
