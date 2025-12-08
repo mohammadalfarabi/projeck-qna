@@ -1,8 +1,5 @@
 <?php
 
-session_start();
-
-
 // Helper functions (since they are defined in index.php but not available here)
 if (!function_exists('redirect')) {
     function redirect($url) {
