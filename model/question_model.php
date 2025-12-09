@@ -85,12 +85,16 @@ function search_questions($keyword, $limit = null, $offset = null) {
 
     $keyword = mysqli_real_escape_string($conn, $keyword);
 
-    $query = "SELECT q.*, u.name AS user_name, s.school_name
+    $query = "SELECT q.question_id, q.title, q.body, q.created_at, u.name AS user_name, s.school_name,
+                     COALESCE(GROUP_CONCAT(t.tag_name ORDER BY t.tag_id ASC SEPARATOR ', '), 'No Tag') AS tags
               FROM `question` q
               JOIN `user` u ON q.user_id = u.user_id
               LEFT JOIN `school` s ON u.school_id = s.school_id
+              LEFT JOIN `question_tag` qt ON q.question_id = qt.question_id
+              LEFT JOIN `tag` t ON qt.tag_id = t.tag_id
               WHERE q.title LIKE '%$keyword%'
                  OR q.body LIKE '%$keyword%'
+              GROUP BY q.question_id
               ORDER BY q.created_at DESC";
 
     if ($limit !== null && $offset !== null) {
