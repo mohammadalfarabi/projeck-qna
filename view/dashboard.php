@@ -1,4 +1,4 @@
-
+ 
 <style>
     body {
         background-color: #F2D1D1 !important;
@@ -258,7 +258,7 @@
                         On <?= date("d M Y H:i", strtotime($question['created_at'])); ?>
                     </small>
                     <br>
-                    <small>Tag: <b><?= htmlspecialchars($question['tags']); ?></b></small>
+                    <small>Tag: <b><?= htmlspecialchars($question['tags'] ?? 'No Tag'); ?></b></small>
                 </div>
             <?php endwhile; ?>
         <?php endif; ?>
