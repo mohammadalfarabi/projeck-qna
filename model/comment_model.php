@@ -8,13 +8,13 @@ function get_comments_by_question($question_id) {
     $question_id = mysqli_real_escape_string($conn, $question_id);
 
     $query = "
-        SELECT 
-            c.comment_id, c.user_id, c.question_id, c.answer_id, 
+        SELECT
+            c.comment_id, c.user_id, c.question_id, c.answer_id,
             c.body, c.created_at,
             u.name AS user_name
         FROM `comment` c
         JOIN `user` u ON c.user_id = u.user_id
-        WHERE c.question_id = '$question_id'
+        WHERE c.question_id = '$question_id' AND c.answer_id IS NULL
         ORDER BY c.created_at DESC
     ";
 
